@@ -1,10 +1,7 @@
 package server
 
-import (
-	"net/http"
-)
+func Start() {
+	router := setRouter()
 
-func Server(w http.ResponseWriter, r *http.Request) {
-	http.ServeFile(w, r, "frontend/build/index.html")
-
+	router.Run(":3000")
 }
