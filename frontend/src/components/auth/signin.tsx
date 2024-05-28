@@ -8,6 +8,7 @@ export default function SignIn() {
         const formData = new FormData(e.currentTarget);
 
         const body = {
+            username: formData.get("username"),
             email: formData.get("email"),
             password: formData.get("password"),
         };
@@ -26,6 +27,8 @@ export default function SignIn() {
     return (
         <div>
             <form onSubmit={handleSubmit}>
+                <label htmlFor="username"> Username </label>
+                <input type="text" name="username"></input>
                 <label htmlFor="email"> Email </label>
                 <input type="text" name="email"></input>
                 <label htmlFor="password"> Password </label>
